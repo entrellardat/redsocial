@@ -1,13 +1,14 @@
 'use strict'
 
 var mongoose = require('mongoose');
-var Schema   = mongoose.Schema ;
+var Schema = mongoose.Schema;
 
 var MessageSchema = Schema({
-	text : String , 
-	created_at : String ,
-	emmiter : { type : Schema.ObjectId , ref : 'User' } , 
-	reciever : { type : Schema.ObjectId , ref : 'User' } 
+    text: String,
+    viewed: String,
+    created_at: String,
+    emitter: { type: Schema.ObjectId, ref: 'User' },
+    reciever: { type: Schema.ObjectId, ref: 'User' }
 });
 
-module.exports = mongoose.model('Message',MessageSchema);
+module.exports = mongoose.model('Message', MessageSchema);
