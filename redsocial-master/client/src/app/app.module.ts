@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 // Nuestros componentes
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 // Rutas
 
@@ -24,6 +25,7 @@ import { LoginComponent } from './components/login/login.component';
     BrowserModule,
     FormsModule,
     HttpModule ,
+    HttpClientModule,
     routing
   ],
   providers: [ appRoutingProviders],
