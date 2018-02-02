@@ -14,6 +14,7 @@ import { UserService } from 'app/Services/user.service';
 export class RegisterComponent implements OnInit {
   title : String  ;
   public user : User ;
+  status : String ;
   constructor(
     private _route: ActivatedRoute ,
     private _router: Router ,
@@ -35,11 +36,17 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(){
+  onSubmit(form){
    this._userService.register(this.user).subscribe(response=>
    {
+      console.log('entro');
       if(response.user && response.user._id){
-        console.log(response.user);
+        this.status = 'success';
+        // resetear formulario
+        form.reset();
+      }
+      else{
+        this.status = 'error';
       }
    },
    error=>{
