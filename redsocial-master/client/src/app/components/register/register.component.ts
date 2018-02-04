@@ -29,7 +29,8 @@ export class RegisterComponent implements OnInit {
           '' ,
           '' ,
           'ROLE_USER' ,
-          '' 
+          ''  ,
+          ''
       );
   }
 
@@ -50,7 +51,7 @@ export class RegisterComponent implements OnInit {
       }
    },
    error=>{
-      console.log(<any>error)
+      console.log('Errores' + <any>error)
    });
   
 }
